@@ -5,8 +5,9 @@ import { Pinecone } from '@pinecone-database/pinecone';
 import {posts} from "@/app/lib/data/data";
 
 import { NextRequest } from 'next/server'
+
  const ANTHROPIC_API_KEY = process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY;
-  const PINECONE_API_KEY = process.env.NEXT_PUBLIC_PINECONE_API_KEY;
+ const PINECONE_API_KEY = process.env.NEXT_PUBLIC_PINECONE_API_KEY;
 
 
 if (!ANTHROPIC_API_KEY || !PINECONE_API_KEY) {
@@ -16,6 +17,8 @@ if (!ANTHROPIC_API_KEY || !PINECONE_API_KEY) {
 
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 const serviceAdapter = new AnthropicAdapter({ anthropic: anthropic as any });
+
+
 const pinecone = new Pinecone({ apiKey: PINECONE_API_KEY });
 const model = 'multilingual-e5-large';
 const indexName = 'knowledge-base-data';
