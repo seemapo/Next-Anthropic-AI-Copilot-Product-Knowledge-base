@@ -1,4 +1,4 @@
-import KnowledgeBase from "@/app/ui/components/KnoledgeBase";
+import KnowledgeBase from "@/app/ui/components/KnowlwedgeBase";
 
 export default function Home() {
   return (
